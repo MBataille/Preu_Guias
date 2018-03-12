@@ -1,0 +1,86 @@
+\documentclass[letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[letterpaper,includeheadfoot, top=.5cm, bottom=3.0cm, right=2.0cm, left=2.0cm]{geometry}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{gensymb}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{url}
+%\usepackage{pdfpages}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{siunitx}
+\usepackage{framed}
+\tikzset{
+every picture/.append style={
+  execute at begin picture={\deactivatequoting},
+  execute at end picture={\activatequoting}
+  }
+}
+%-------------------- CABECERA ---------------------
+\pagestyle{fancy}
+\fancyhf{}
+\author{Martin Bataille}
+\date{}
+\title{\bf Template}
+%Encabezado
+\fancyhead[R]{\includegraphics[scale=0.35]{jct.jpg}}
+\fancyfoot[C]{\thepage}
+
+
+\newcommand{\tpb}[1]{node[midway, below, sloped] {#1}}
+\newcommand{\tpa}[1]{node[midway, above, sloped] {#1}}
+\newcommand{\tvec}[3]{[->, thick] #1 -- #2 \tpb{#3}}
+\newcommand{\tveca}[3]{[->, thick] #1 -- #2 \tpa{#3}}
+\newcommand{\tvecnotsloped}[3]{[->, thick] #1 -- #2 {node[midway, above] {#3}}}
+
+\newcounter{propiedades}
+\newcounter{definiciones}
+
+\newcommand{\propi}{\stepcounter{propiedades} \textbf{Propiedad \thepropiedades}: }
+\newcommand{\defii}{\stepcounter{definiciones} \textbf{Definición \thedefiniciones}: }
+
+\newenvironment{prop}
+{ \begin{framed} \propi}
+{ \end{framed} }
+\newenvironment{defi}{\begin{framed} \defii}{\end{framed}}
+
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\headheight}{92pt}
+
+% --------------- ---------PORTADA -----------------------
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+\begin{center}
+\includegraphics[scale=0.6]{portada.jpg}
+\end{center}
+\pagebreak
+
+                                                                                                                                  
+\section*{Ejercicios}
+
+\begin{enumerate}
+
+\item Pendiente
+
+\end{enumerate}
+
+\section*{Problemas}
+
+\begin{enumerate}
+
+\item Pendiente
+
+\end{enumerate}
+
+\end{document}
