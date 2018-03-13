@@ -63,7 +63,7 @@ every picture/.append style={
 \maketitle
 \thispagestyle{fancy}
 \begin{center}
-\includegraphics[scale=0.6]{portada.jpg}
+\includegraphics[scale=1.2]{portada.jpg}
 \end{center}
 \pagebreak
 
@@ -128,7 +128,46 @@ Primero, notemos que por la regla de la mano derecha, $\vec{\tau}_1$ y $\vec{\ta
 |\vec{\tau}_2| &= |\vec{r}_2|\cdot|\vec{F}_2|\cdot\cos{\theta_2} = 0.8 \cdot 10 \cdot \cos{\frac\pi3} = 8\cdot\frac12 = 4\ \si{N.m}
 \end{align*}
 
+Sorprendentemete, las dos fuerzas producen el mismo torque! ¿Pero qué significa eso respecto al movimiento de la puerta? Para responder a esta pregunta tenemos que introducir una relación muy importante para el estudio de la rotación de los objetos, la famosa segunda ley de Newton para la rotación:
 
+\begin{prop}
+El torque y la aceleración angular están íntimamente relacionados de manera análoga a la fuerza y la aceleración lineal:
+$$\vec{\tau} = I\vec{\alpha}$$
+
+Donde $I$ representa el momento de inercia de un cuerpo y $\vec{\alpha}$ su aceleración angular.
+\end{prop}
+
+\section*{¿Qué es el momento de inercia?}
+
+Dicho simplemente, el momento de inercia es el equivalente de la masa para la rotación de los cuerpos. Cuando estudiamos fuerzas y dinámica vimos que la masa de un objeto es la capacidad que tiene para resistirse al cambio de su movimiento. En el caso de la rotación, es el momento de inercia y no la masa la que determina su resistencia al cambio de movimiento (rotacional). Un ejemplo sencillo es el de la escoba, mientras uno no rompa o separe la escoba en varias partes, su masa va a ser constante lo que implica que al aplicarle la misma fuerza, se va a mover lo mismo. En cambio, si uno quiere rotar la escoba, observará que es más fácil rotar la escoba en torno al eje que pasa por el centro del palo de la escoba. Si se intenta rotar la escoba respecto a un eje perpendicular al palo de la escoba será mucho más difícil. Esto se debe a que el momento de inercia de un cuerpo depende del eje respecto al cual se rota el cuerpo.
+
+\begin{defi}
+El momento de inercia de un cuerpo representa su capacidad de resistirse al movimiento de rotación y se determina en función de la repartición de la masa en torno al eje de rotación. Mientras la masa se concentre más cerca del eje de rotación, menor será su momento de inercia, por lo tanto, más fácil será hacerlo rotar. En cambio, si la masa se concentra lejos el eje de rotación, mayor será el momento de inercia y más difíci será hacerlo rotar.
+
+Para un cuerpo puntual, su momento de inercia está dado por:
+$$I = mr^2$$
+
+Donde $m$ representa la masa del cuerpo y $r$ la distancia desde el cuerpo hasta el eje de rotación. Se deduce que la unidad del momento de inercia según el \emph{SI} es \si{kg.m^2}.
+\end{defi}
+
+Como el momento de inercia depende de la forma del objeto y de la posición del eje de rotación no es necesario conocer el valor asociado a cada forma, solo basta recordar que mientrás más lejos esté repartida la masa respecto al eje de rotación mayor será el momento de inercia. En la figura siguiente se puede apreciar el momento de inercia en el caso de algunas formas geométricas.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{momentos_de_inercia.jpg}
+\end{figure}
+
+\section*{Equilibrio estático}
+
+Un problema recurrente en el estudio de fuerzas y rotación, son las condiciones para que un cuerpo esté estático. Se entiende que un cuerpo está estático cuando está y permanece en reposo. En otras palabras, su aceleración y su velocidad son nulas. De manera formal, para que un cuerpo esté completamente estático se tienen que cumplir cuatro condiciones:
+\begin{itemize}
+\item La velocidad lineal $v$ tiene que ser nula.
+\item La fuerza neta sobre el objeto tiene que ser nula.
+\item La velocidad angular $\omega$ tiene que ser nula.
+\item El torque neto sobre el objeto tiene que ser nulo.
+\end{itemize}
+
+Es importante notar que incluso si la fuerza neta sobre un cuerpo es nula, eso no implica que el torque neto sea nulo. Dos fuerzas de igual magnitud que tienen sentido opuesto pero se aplican en distintos puntos del cuerpo provocan un torque neto que no es nulo mientras que la fuerza neta sobre el cuerpo si es nula.
 
 
 
