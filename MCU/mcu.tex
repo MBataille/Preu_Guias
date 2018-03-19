@@ -17,6 +17,7 @@
 \usepackage{float}
 \usepackage{tikz}
 \usepackage{siunitx}
+\usepackage{enumitem}
 \usepackage{framed}
 \tikzset{
 every picture/.append style={
@@ -250,19 +251,65 @@ De manera que si el radio del pedal es $5$ veces el del piñón, entonces la vel
 
 \textbf{Problema.} Nuestro amigo Daniel luego de salir del Fantasilandia, se propuso hacerle una carrera a su hermana, Camila. Claro que como Camila es más grande y rápida que Daniel, él agarró su bici y partió a toda velocidad, pedaleando a una velocidad angular $\omega = 6$ \si{rad.s^{-1}}, mientras que Camila salió detrás de él corriendo a toda velocidad. ¿Quién ganará la carrera? Asuma que Camila puede correr uniformemente a $15$ \si{km.h^{-1}} y que la bici de Daniel es tal que el radio del plato de los pedales es $12$ \si{cm}, el radio del piñón es $6$ \si{cm} y que el radio de la rueda de la bici es de $30$ \si{cm}.
 
-\section*{Actividad paranormal: Fuerza centrífuga}
-
-Probablemente una de las fuerzas más famosas es la que nos bota de las micros cuando giran muy rápido, la que nos permite secar la ropa en la secadora o la que nos empuja hacia afuera en una montaña rusa, así es: la fuerza centrífuga. Paradójicamente, ¡esta fuerza no existe! En física se le llama a este tipo de fuerzas, \emph{fuerzas virtuales} ya que no existen pero aún así se sienten como fuerzas. ¿Cómo se explica esto?
-
-
-Para comprender el tema tenemos que saber lo que es un sistema inercial. Cuando vimos las leyes de Newton, la verdad es que esas leyes vienen con una letra chica: solo se aplican en un sistema inercial. ¿Qué es un sistema inercial? Pues un sistema en el que se aplican las leyes de Newton. De aquí surge una muy buena pregunta, ¿existe un sistema en donde no se cumplan las leyes de Newton? 
-
-Podemos pensar en el metro, si dejas una maleta con ruedas en reposo en la mitad del metro, las únicas fuerzas que se aplican sobre la maleta son las fuerzas peso, normal, roce estático con el suelo (despreciable porque tiene ruedas) y roce con el aire (también despreciable). Sin embargo, sabemos que la maleta no se mueve verticalmente, por lo tanto, necesariamente la fuerza de peso es igual a la normal, mientras que en el eje horizontal no existe ninguna fuerza, o sea que, por la primera ley de newton, la maleta va a seguir en reposo. En la realidad, cuando el metro comienza a acelerar, la maleta se va al otro extremo del metro ya que se mantiene en reposo respecto a la estación de metro, no al metro en sí. El metro es entonces un sistema no inercial, ya que les las leyes de Newton no se cumplen, mientras que la estación de metro es un sistema inercial.
-
-De manera general, un sistema es no inercial si acelera o rota con respecto a un sistema inercial. En el caso del metro, podemos pensar en la estación de metro como un sistema inercial ya que, efectivamente, las leyes de Newton se cumplen en la estación de metro, y, puesto que el metro está acelerando con respecto a la estación, el metro deja de ser un sistema inercial. Para poder aplicar las leyes de Newton en un sistema no inercial, hay que agregar fuerzas \emph{ficticias} o \emph{virtuales}, como la fuerza centrífuga. De esta manera, para estudiar el movimiento de la maleta, hay que introducir una fuerza ficticia que sería la responsable de que la maleta se escape al otro extremo del metro.                                                                                                                                   
+                                                                                                                
 \section*{Ejercicios}
 
-Pendiente
+
+\begin{enumerate}
+
+\item Un ciclista se mueve en una pista circunferencial de radio 50 metros con rapidez lineal constante de $20\ \si{m.s^{-1}}$. ¿Cúal es el valor de su rapidez angular?
+
+\begin{enumerate}[label=\Alph*)]
+\item $\frac{10}{\pi}\ \si{rad.s^{-1}}$
+\item $\frac{10}{25}\ \si{rad.s^{-1}}$
+\item $\frac{\pi}{10}\ \si{rad.s^{-1}}$
+\item $\frac{25}{10}\ \si{rad.s^{-1}}$
+\item $2\pi\ \si{rad.s^{-1}}$
+\end{enumerate}
+
+\item Un disco gira horizontalmente con movimiento circunferencial uniforme realizando $15$ vueltas en $1$ minuto. Respecto de un punto situado sobre el disco a $10\ \si{cm}$ del centro de giro es posible afirmar que sus rapideces angular y lineal, medidas respectivamente en \si{rad.s^{-1}} y \si{m.s^{-1}} son:
+\begin{enumerate}[label=\Alph*)]
+\item $15\pi$ \quad $\frac{15\pi}{60}$
+\item $60\pi$ \quad $\frac{60\pi}{15}$
+\item $\frac{30\pi}{60}$ \quad $\frac{3\pi}{60}$
+\item $45\pi$ \quad $\frac{4,5\pi}{60}$
+\item $\frac{20\pi}{60}$ \quad $\frac{2\pi}{60}$
+\end{enumerate}
+
+\item Un móvil se mueve con MCU entonces ¿cuál de las siguientes magnitudes es constante?
+\begin{enumerate}[label=\Alph*)]
+\item Velocidad tangencial
+\item Aceleración centrípeta
+\item Momentum lineal
+\item Velocidad angular
+\item Impulso
+\end{enumerate}
+
+
+\item Una piedra atada a una cuerda de 4 metros, gira realizando un MCU de frecuencia $\frac5\pi\ \si{Hz}$. De acuerdo a esta información, la aceleración centrípeta de la piedra, medida en \si{m.s^2} es:
+\begin{enumerate}[label=\Alph*)]
+\item $10\pi^2$
+\item $400$
+\item $10$
+\item $400\pi^2$
+\item $\frac{\pi^2}{2}$
+\end{enumerate}
+
+\item Un neumático de auto, de radio $0.5\ \si{m}$, rueda con velocidad lineal de $40\ \si{m.s^{-1}}$. ¿Cuál es la frecuencia de giro en \si{Hz} de dicho neumático?
+
+\begin{enumerate}[label=\Alph*)]
+
+\item $\frac{\pi}{40}$
+\item $2\pi$
+\item $\frac{\pi}{20}$
+\item $\frac{40}{\pi}$
+\item $\frac{80}{\pi}$
+
+\end{enumerate}
+
+
+
+\end{enumerate}
 
 \section*{Problemas}
 
@@ -283,7 +330,7 @@ Pendiente
 \caption{Esquema del loop}
 \end{figure}
  
-\item En \emph{El juego de Ender}, una de las obras más importantes de ciencia ficción en las útimas décadas, Ender, el protagonista se encuentra en una nave espacial que presenta una camara giratoria, ver imagen siguiente. A medida que recorre la nave, Ender se da cuenta que la camara giratoria tiene distintos niveles y a medida que sube a niveles más altos siente que su movimiento se hace más difícil y lento.  Así deduce que los niveles más altos están más lejos del centro de rotación provocando así que la aceleración centrípeta en los niveles más altos sea mayor. Ender, al subir al último nivel, siente que el movimiento se vuelve muy parecido al de la Tierra, por lo que considera que la aceleración centrípeta es casi igual a $g$, la aceleración de gravedad. Además, Ender, viendo por la ventana de la nave, determina que la nave da una vuelta completa cada $10\ \si{s}$. Ayuda a Ender a encontrar a qué distancia se encuentra el último nivel de la nave al eje de rotación.
+\item En \emph{El juego de Ender}, una de las obras más importantes de ciencia ficción, Ender, el protagonista se encuentra en una nave espacial que presenta una camara giratoria, ver imagen siguiente. A medida que recorre la nave, Ender se da cuenta que la camara giratoria tiene distintos niveles y a medida que sube a niveles más altos siente que su movimiento se hace más difícil y lento.  Así deduce que los niveles más altos están más lejos del centro de rotación provocando así que la aceleración centrípeta en los niveles más altos sea mayor. Ender, al subir al último nivel, siente que el movimiento se vuelve muy parecido al de la Tierra, por lo que considera que la aceleración centrípeta es casi igual a $g$, la aceleración de gravedad. Además, Ender, viendo por la ventana de la nave, determina que la nave da una vuelta completa cada $10\ \si{s}$. Ayuda a Ender a encontrar a qué distancia se encuentra el último nivel de la nave al eje de rotación.
 
 \begin{figure}[h]
 \centering
