@@ -14,6 +14,7 @@
 %\usepackage{pdfpages}
 \usepackage{fancyhdr}
 \usepackage{enumerate}
+\usepackage{enumitem}
 \usepackage{float}
 \usepackage{tikz}
 \usetikzlibrary{patterns}
@@ -28,9 +29,9 @@ every picture/.append style={
 %-------------------- CABECERA ---------------------
 \pagestyle{fancy}
 \fancyhf{}
-\author{Martin Bataille}
+\author{Docente: Martin}
 \date{}
-\title{\bf Torque}
+\title{\bf Guía 15: Torque y Estática}
 %Encabezado
 \fancyhead[R]{\includegraphics[scale=0.35]{jct.jpg}}
 \fancyfoot[C]{\thepage}
@@ -52,6 +53,13 @@ every picture/.append style={
 { \begin{framed} \propi}
 { \end{framed} }
 \newenvironment{defi}{\begin{framed} \defii}{\end{framed}}
+
+\newenvironment{enumalf}
+{\begin{enumerate}[label=\Alph*)]}
+{\end{enumerate}}
+\newenvironment{enumroman}
+{\begin{enumerate}[label=\Roman*)]}
+{\end{enumerate}}
 
 \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
 \renewcommand{\headrulewidth}{0.5pt}
@@ -137,26 +145,6 @@ $$\vec{\tau} = I\vec{\alpha}$$
 Donde $I$ representa el momento de inercia de un cuerpo y $\vec{\alpha}$ su aceleración angular.
 \end{prop}
 
-\section*{¿Qué es el momento de inercia?}
-
-Dicho simplemente, el momento de inercia es el equivalente de la masa para la rotación de los cuerpos. Cuando estudiamos fuerzas y dinámica vimos que la masa de un objeto es la capacidad que tiene para resistirse al cambio de su movimiento. En el caso de la rotación, es el momento de inercia y no la masa la que determina su resistencia al cambio de movimiento (rotacional). Un ejemplo sencillo es el de la escoba, mientras uno no rompa o separe la escoba en varias partes, su masa va a ser constante lo que implica que al aplicarle la misma fuerza, se va a mover lo mismo. En cambio, si uno quiere rotar la escoba, observará que es más fácil rotar la escoba en torno al eje que pasa por el centro del palo de la escoba. Si se intenta rotar la escoba respecto a un eje perpendicular al palo de la escoba será mucho más difícil. Esto se debe a que el momento de inercia de un cuerpo depende del eje respecto al cual se rota el cuerpo.
-
-\begin{defi}
-El momento de inercia de un cuerpo representa su capacidad de resistirse al movimiento de rotación y se determina en función de la repartición de la masa en torno al eje de rotación. Mientras la masa se concentre más cerca del eje de rotación, menor será su momento de inercia, por lo tanto, más fácil será hacerlo rotar. En cambio, si la masa se concentra lejos el eje de rotación, mayor será el momento de inercia y más difíci será hacerlo rotar.
-
-Para un cuerpo puntual, su momento de inercia está dado por:
-$$I = mr^2$$
-
-Donde $m$ representa la masa del cuerpo y $r$ la distancia desde el cuerpo hasta el eje de rotación. Se deduce que la unidad del momento de inercia según el \emph{SI} es \si{kg.m^2}.
-\end{defi}
-
-Como el momento de inercia depende de la forma del objeto y de la posición del eje de rotación no es necesario conocer el valor asociado a cada forma, solo basta recordar que mientrás más lejos esté repartida la masa respecto al eje de rotación mayor será el momento de inercia. En la figura siguiente se puede apreciar el momento de inercia en el caso de algunas formas geométricas.
-
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.4]{momentos_de_inercia.jpg}
-\end{figure}
-
 \section*{Equilibrio estático}
 
 Un problema recurrente en el estudio de fuerzas y rotación, son las condiciones para que un cuerpo esté estático. Se entiende que un cuerpo está estático cuando está y permanece en reposo. En otras palabras, su aceleración y su velocidad son nulas. De manera formal, para que un cuerpo esté completamente estático se tienen que cumplir cuatro condiciones:
@@ -196,16 +184,252 @@ Podemos concluir entonces que la suma de fuerzas o la fuerza neta será nula, lo
 
 \begin{enumerate}
 
-\item Pendiente
+\item La condición para que una puerta gire en torno a un eje es que se aplique
+
+\begin{enumerate}[label=\Alph*)]
+\item un impulso sobre ella.
+\item un torque sobre ella.
+\item una fuerza sobre ella.
+\item una fuerza en el eje de giro.
+\item ninguna de las anteriores
+\end{enumerate}
+
+\item La puerta giratoria de un edificio en cierto instante queda detenida debido a la acción de las cargas que indica la figura. ¿A qué distancia se aplicó la carga $\frac{P}{2}$
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\draw (0,0) rectangle (4,1);
+\draw (2,0.5) node {$\bullet$};
+\draw [<->] (0.2,-0.2) -- (1.8,-0.2) node[midway, below] {$x$};
+\draw [<->] (2.2,-0.2) -- (3.8,-0.2) node[midway, below] {$4L$};
+\draw [->] (0,4) -- (0,1.3);
+\draw (0,4) node[above] {$\frac{P}{2}$};
+\draw [->] (4,4) -- (4,1.3);
+\draw (4,4) node[above] {$P$};
+\end{tikzpicture}
+\end{figure}
+
+\begin{enumalf}
+\item $L$
+\item $2L$
+\item $4L$
+\item $6L$
+\item $8L$
+\end{enumalf}
+
+\pagebreak
+
+\item En la figura siguiente, determine la magnitud del torque neto y el tipo de giro (horario o antihorario). Considere $|\vec{F}_1| = 3\ \si{N}$, $|\vec{F}_2| = 7\ \si{N}$, $|\vec{F}_3| = 5\ \si{N}$.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\fill (0,0) -- (1,0) -- (0.5,0.7) -- cycle;
+\draw (0.4,0.7) rectangle (4.5, 1.3);
+\draw [->] (1.7,1.3) -- (1.7,2.3);
+\draw (1.7,2.3) node[above] {$\vec{F}_1$};
+\draw [<->] (0.5,1.5) -- (1.5,1.5) node[midway,above] {$2\ \si{m}$};
+\draw [<->] (1.9,1.5) -- (2.9,1.5) node[midway,above] {$2\ \si{m}$};
+\draw [<->] (3.3,1.5) -- (4.3,1.5) node[midway,above] {$2\ \si{m}$};
+\draw [->] (3.1,0.7) -- (3.1, -0.3);
+\draw (3.1,-0.3) node[below] {$\vec{F}_2$};
+\draw [->] (4.5,1.3) -- (4.5, 2.3);
+\draw (4.5,2.3) node[above] {$\vec{F}_3$};
+\end{tikzpicture}
+
+\end{figure}
+
+\begin{enumalf}
+\item $8\ \si{N.m}$ en sentido antihorario.
+\item $8\ \si{N.m}$ en sentido horario.
+\item $10\ \si{N.m}$ en sentido antihorario.
+\item $10\ \si{N.m}$ en sentido horario.
+\item $37\ \si{N.m}$ en sentido antihorario.
+\end{enumalf}
+
+\item Se coloca una tuerca con una llave como se muestra en la figura. Si el brazo $r$ es igual a $30\ \si{cm}$ y el torque de apriete recomendado para la tuerca es de $30\ \si{N.m}$. ¿Cuál debe ser el valor de la fuerza $F$ aplicada?
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{tuerca.png}
+\end{figure}
+
+\begin{enumalf}
+\item $0,01\ \si{N}$
+\item $0,1\ \si{N}$
+\item $1\ \si{N}$
+\item $10\ \si{N}$
+\item $100\ \si{N}$
+\end{enumalf}
+
+\item Una persona cierra una puerta de $1\ \si{m}$ de ancho, aplicando una fuerza perpendicular a la puerta de $40\ \si{N}$ a $90\ \si{cm}$ de su eje de rotación. El torque aplicado es:
+
+\begin{enumalf}
+\item $3600\ \si{N.m}$
+\item $360\ \si{N.m}$
+\item $40\ \si{N.m}$
+\item $36\ \si{N.m}$
+\item $4\ \si{N.m}$
+\end{enumalf}
+
+\pagebreak
+
+\item Camila y Daniel están sentados en un balancín homogéneo, como en la figura siguiente donde $A$ representa a Camila y $B$ representa a Daniel. Camila está a $x$ metros del centro, y Daniel está a $y$ metros del centro. A pesar de que Camila y Daniel no pesan lo mismo, el balancín está equilibrado. Esto puede deberse a que
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{balancin.png}
+
+\end{figure}
+
+\begin{enumalf}
+\item el torque aplicado por Camila y el aplicado por Daniel respecto del pivote, es nulo.
+\item falta conocer los valores de $x$ e $y$.
+\item Camila y Daniel aplican fuerzas de igual magnitud sobre el balancín.
+\item el torque neto, respecto del pivote, es nulo en el sistema.
+\item el peso que aplica Camila sobre el balancín es menor que el que aplica Daniel.
+\end{enumalf}
+
+\item Una moneda que se hace rodar por una mesa puede mantenerse rotando en el mismo plano mientras avanza, mientras que cuando su rapidez angular es muy baja, su movimiento se hace errático hasta que cae y queda en reposo. ¿Usando qué principio se puede explicar que la moneda conserve su plano de rotación?
+
+\begin{enumalf}
+\item conservación del momento angular.
+\item conservación de la energía.
+\item conservación del momento de inercia. 
+\item conservación del Torque.
+\item Ninguna de las anteriores
+\end{enumalf}
+
+\item Dos niñas, Alfa y Beta, empujan una puerta ejerciendo una fuerza perpendicular a la puerta. La puerta puede girar libremente en torno al eje indicado. Si las niñas presionan la puerta y ésta se mantiene inmóvil, podemos afirmar que
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{alfabeta.png}
+\end{figure}
+
+\begin{enumalf}
+\item la magnitud de la fuerza que aplica Alfa sobre la puerta es menor que la que aplica Beta.
+\item la magnitud de la fuerza que aplica Alfa sobre la puerta es mayor que la que aplica Beta.
+\item Alfa y Beta aplican fuerzas de igual magnitud sobre la puerta.
+\item el torque con respecto al eje aplicado por Alfa es nulo.
+\item el torque con respecto al eje aplicado por Alfa es mayor que el aplicado por Beta.
+\end{enumalf}
+
+\pagebreak
+
+\item Una barra de $2\ \si{m}$ de largo y peso despreciable, está pivotada en un extremo, y en el otro extremo está amarrada a una cuerda que se hace pasar por una polea de $40\ \si{cm}$ de diámetro y de la cual cuelga una masa $A$ de $2\ \si{kg}$. Además de $A$, un cuerpo $B$ de $8\ \si{kg}$ descansa sobre la barra a la izquierda del pivote. Si el sistema está en equilibrio, entonces $B$ está ubicado respecto al punto de apoyo a una distancia de
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{polea1.png}
+\end{figure}
+
+\begin{enumalf}
+\item $1,5\ \si{m}$
+\item $1,0\ \si{m}$
+\item $0,5\ \si{m}$
+\item $0,4\ \si{m}$
+\item $0,2\ \si{m}$
+\end{enumalf}
+
+\item Se tiene una barra homogénea de peso $20\ \si{N}$ y largo $L$ en equilibrio rotacional. La barra está pivoteada a una distancia $\frac{L}{4}$ del centro, hacia la izquierda. Si sobre el extremo izquierdo cuelga un cuerpo de masa $5\ \si{kg}$, entonces la masa del cuerpo $M$ que se encuentra en el extremo derecho de la barra es,
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{balancin2.png}
+\end{figure}
+
+\begin{enumalf}
+\item $0,5\ \si{kg}$
+\item $1\ \si{kg}$
+\item $2\ \si{kg}$
+\item $5\ \si{kg}$
+\item $10\ \si{kg}$
+\end{enumalf}
+
+\item Respecto a la situación de la figura, se hacen las siguientes aseveraciones:
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{ang.png}
+\end{figure}
+
+\begin{enumroman}
+\item Si el ángulo $\beta$ aumenta, entonces el torque aumenta.
+\item Si el ángulo $\beta$ es \ang{180}, entonces el torque es nulo.
+\item No importa el valor que tome el ángulo $\beta$ ya que la magnitud del torque siempre será $4\ \si{N.m}$.
+\end{enumroman}
+
+\begin{enumalf}
+\item Sólo I
+\item Sólo II
+\item Sólo III
+\item Sólo I y III
+\item I, II y III
+\end{enumalf}
+
+\item El sistema mostrado en la figura está en equilibrio, en ella también se muestran las distancias al punto de apoyo. Los pesos de las poleas y de la palanca, así como las fuerzas de fricción son despreciables. ¿Cuál es el módulo de la fuerza $\vec{P}$?
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{poleas.png}
+\end{figure}
+
+\begin{enumalf}
+\item $80\ \si{N}$
+\item $40\ \si{N}$
+\item $20\ \si{N}$
+\item $10\ \si{N}$
+\item $5\ \si{N}$
+\end{enumalf}
+
+Para que una persona pueda mantener el sistema de poleas de la figura en equilibrio, debe ejercer una fuerza vertical de magnitud,
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{personapolea.png}
+\end{figure}
+
+\begin{enumalf}
+\item $300\ \si{N}$
+\item $150\ \si{N}$
+\item $30\ \si{N}$
+\item $15\ \si{N}$
+\item $7,5\ \si{N}$
+\end{enumalf}
+
+\pagebreak
+
+\item Una barra horizontal está apoyada en el extremo izquierdo sobre la cabeza de una persona, y en el extremo derecho sobre un mueble. La barra es homogénea, mide $2\ \si{m}$ de largo y pesa $6\ \si{kg}$. Considerando los torques respecto al extremo derecho de la barra, la fuerza que hace la cabeza de la persona sobre la barra es
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{personatorque.png}
+\end{figure}
+
+\begin{enumalf}
+\item $120\ \si{N}$
+\item $60\ \si{N}$
+\item $45\ \si{N}$
+\item $30\ \si{N}$
+\item $20\ \si{N}$
+\end{enumalf}
 
 \end{enumerate}
 
-\section*{Problemas}
+\pagebreak
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+ 1 & 2 & 3 & 4 & 5 \\ \hline
+ B & E & A & E & D \\ \hline
+ 6 & 7 & 8 & 9 & 10 \\ \hline
+ D & A & B & C & B \\ \hline
+ 11 & 12 & 13 & 14 & 15 \\ \hline
+ B & D & D & D & / \\ \hline
+\end{tabular}
+\end{center}
 
-\begin{enumerate}
-
-\item Pendiente
-
-\end{enumerate}
 
 \end{document}
